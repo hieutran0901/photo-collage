@@ -1,0 +1,54 @@
+nav{
+  .active{
+    background-color: rgb(3, 84, 3);
+  }
+}
+
+.collage-designer {
+  display: flex;
+  min-height: 50px;
+  gap: 3px;
+  .menu_background{
+    box-shadow: 0px 5px 15px rgba(0,0,0,0.2);
+    border-radius: 5px;
+  }
+  button {
+    padding: 0px 15px;
+    min-height: 50px;
+    color: #fff;
+    font-size: 17px;
+    background-color: #82b338;
+  }
+  .icon_save {
+    font-size: 25px;
+    background-color: #4e8028;
+  }
+  label {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    border: 2px solid #6c5ce7;
+    padding: 0.2em 0.4em;
+    background-color: #a29bfe;
+    transition: 0.7s;
+  }
+
+  label:hover {
+    background-color: #81ecec;
+    border: 2px solid #00cec9;
+  }
+}
+
+.editor {
+  background-image: url("../assets/images/checkerboard.png");
+  .frame{
+    box-shadow: 0px 0px 15px rgba(0,0,0,0.5);
+  }
+}
+
+@media (max-width:767.9px){
+  .editor{
+    overflow-y: hidden;
+    height: 400px;
+  }
+}
