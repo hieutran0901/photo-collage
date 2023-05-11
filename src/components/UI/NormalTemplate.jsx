@@ -2,7 +2,7 @@ import React from "react";
 import PictureDrop from "../PictureDrop";
 
 const NormalTemplate = ({ frameColor, listDrop, onSubmitPicture, onDeletePicture, grayscale, handleCloseDialog }) => {
-  const sizeBox = { width: "30%", height: "50%" };
+  const sizeBox = { width: "208px", height: "176px" };
 
   return (
     <div
