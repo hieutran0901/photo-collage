@@ -2,7 +2,7 @@ import React, { useEffect, useRef, useState } from "react";
 import { useDrop } from "react-dnd";
 import { RiCloseFill } from "react-icons/ri";
 
-const PictureDrop = ({ id, url, onSubmitPicture, onDeletePicture, grayscale, handleCloseDialog, sizeBox }) => {
+const PictureDrop = ({ id, url, onSubmitPicture, onDeletePicture, grayscale, sizeBox }) => {
   const scrollRef = useRef();
   const [showMenu, setShowMenu] = useState(false);
   const [screenXmouseDown, setScreenXmouseDown] = useState(0);
@@ -11,14 +11,6 @@ const PictureDrop = ({ id, url, onSubmitPicture, onDeletePicture, grayscale, han
     clientX: 0,
     scrollX: 0,
   });
-
-  useEffect(() => {
-    window.addEventListener("click", (e) => handleCloseDialog(scrollRef.current, showMenu, setShowMenu, e));
-
-    return () => {
-      window.removeEventListener("click", handleCloseDialog);
-    };
-  }, [showMenu]);
 
   const [{ isOver }, drop] = useDrop(() => ({
     accept: "image",
@@ -34,6 +26,7 @@ const PictureDrop = ({ id, url, onSubmitPicture, onDeletePicture, grayscale, han
   };
 
   const handleDelete = (id) => {
+    setShowMenu(false);
     onDeletePicture(id);
   };
 

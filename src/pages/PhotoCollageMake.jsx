@@ -23,27 +23,27 @@ const PhotoCollageMake = ({ listDrop, setListDrop, template }) => {
   const [frameColor, setFrameColor] = useState("#ffffff");
   const [listImgUpLoad, setListImgUpload] = useState([]);
 
-  const handleCloseDialog = (ref, menu, setShowMenu, e) => {
-    if (menu) {
-      if (ref) {
-        const dialogDimensions = ref.getBoundingClientRect();
+  const handleCloseDialog = (e) => {
+    console.log("a");
+    if (showMenuBg) {
+      if (refMenuBg.current) {
+        const dialogDimensions = refMenuBg.current.getBoundingClientRect();
         if (
           e.clientX < dialogDimensions.left ||
           e.clientX > dialogDimensions.right ||
           e.clientY < dialogDimensions.top ||
           e.clientY > dialogDimensions.bottom
         ) {
-          setShowMenu(false);
+          setShowMenuBg(false);
         }
       }
     }
   };
 
   useEffect(() => {
-    window.addEventListener("click", (e) => handleCloseDialog(refMenuBg.current, showMenuBg, setShowMenuBg, e));
-
+    document.body.addEventListener("click", handleCloseDialog);
     return () => {
-      window.removeEventListener("click", handleCloseDialog);
+      document.body.removeEventListener("click", handleCloseDialog);
     };
   }, [showMenuBg]);
 
@@ -178,7 +178,6 @@ const PhotoCollageMake = ({ listDrop, setListDrop, template }) => {
               listDrop={listDrop}
               onSubmitPicture={onSubmitPicture}
               onDeletePicture={onDeletePicture}
-              handleCloseDialog={handleCloseDialog}
               grayscale={grayscale}
             />
           ) : (
@@ -186,8 +185,7 @@ const PhotoCollageMake = ({ listDrop, setListDrop, template }) => {
               frameColor={frameColor}
               listDrop={listDrop}
               onSubmitPicture={onSubmitPicture}
-              onDeletePicture={onDeletePicture}
-              handleCloseDialog={handleCloseDialog}
+              onDeletePicture={onDeletePicture}            
               grayscale={grayscale}
             />
           )}

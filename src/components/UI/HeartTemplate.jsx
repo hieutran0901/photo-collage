@@ -2,7 +2,7 @@ import React from "react";
 import PictureDrop from "../PictureDrop";
 import heartthumb from "../../assets/images/thumbmaskheart1.png";
 
-const HeartTemplate = ({ frameColor, listDrop, onSubmitPicture, onDeletePicture, grayscale, handleCloseDialog }) => {
+const HeartTemplate = ({ frameColor, listDrop, onSubmitPicture, onDeletePicture, grayscale }) => {
   const sizeBox = { width: "76px", height: "76px" };
 
   return (
@@ -26,7 +26,6 @@ const HeartTemplate = ({ frameColor, listDrop, onSubmitPicture, onDeletePicture,
           id={item.id}
           url={item.url}
           grayscale={grayscale}
-          handleCloseDialog={handleCloseDialog}
           onSubmitPicture={onSubmitPicture}
           onDeletePicture={onDeletePicture}
         />

@@ -1,7 +1,7 @@
 import React from "react";
 import PictureDrop from "../PictureDrop";
 
-const NormalTemplate = ({ frameColor, listDrop, onSubmitPicture, onDeletePicture, grayscale, handleCloseDialog }) => {
+const NormalTemplate = ({ frameColor, listDrop, onSubmitPicture, onDeletePicture, grayscale }) => {
   const sizeBox = { width: "208px", height: "176px" };
 
   return (
@@ -16,7 +16,6 @@ const NormalTemplate = ({ frameColor, listDrop, onSubmitPicture, onDeletePicture
           id={item.id}
           url={item.url}
           grayscale={grayscale}
-          handleCloseDialog={handleCloseDialog}
           onSubmitPicture={onSubmitPicture}
           onDeletePicture={onDeletePicture}
         />
