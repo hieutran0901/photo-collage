@@ -3,7 +3,9 @@ import listTemplates from "../assets/fake-data/template";
 import { useNavigate } from "react-router-dom";
 
 const PhotoCollageTemplate = ({ setListDrop, setTemplate }) => {
+
   const navigate = useNavigate();
+  
   return (
     <section className="max-w-screen-lg mx-auto text-center my-3">
       <span className="text-4xl text-[#4e8028] font-medium">Photo Collage Templates</span>

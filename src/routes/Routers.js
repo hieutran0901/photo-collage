@@ -7,6 +7,7 @@ import listTemplates from "../assets/fake-data/template";
 const Routers = () => {
   const [listDrop, setListDrop] = useState(listTemplates[0].data);
   const [template, setTemplate] = useState(listTemplates[0].type);
+  
   return (
     <Routes>
       <Route
